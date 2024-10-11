@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>New Delta</title>
+</head>
+<body>
+  <form action="/save" method="post" th:object="${delta}">
+    <input type="hidden" th:field="*{id}"/>
+      <input type="number" th:field="*{a}" class="form-control" id="a">
+      <input type="number" th:field="*{b}" class="form-control" id="b">
+      <input type="number" th:field="*{c}" class="form-control" id="c">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit">Policz</button>
+  </form>
+</body>
+</html>
